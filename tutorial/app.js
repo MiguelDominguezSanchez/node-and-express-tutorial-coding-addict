@@ -1,13 +1,14 @@
 // CommonJS, every  file module (by default)
 // Modules – Encapsulated Code (only share minimum)
-const secret = 'SUPER SECRET'
-const john = 'john'
-const peter = 'peter'
-
-const sayHi = (name) => {
-	console.log(`Hello there ${name}`)
-}
+const names = require('./4-names')
+// const { john, peter } = require('./4-names') // destructured
+const sayHi = require('./5-utils')
+// console.log(names)
 
 sayHi('susan')
-sayHi(john)
-sayHi(peter)
+sayHi(names.john) // property
+sayHi(names.peter) // property
+// sayHi(john) // destructured
+// sayHi(peter) // destructured
+
+//  separated concerns
